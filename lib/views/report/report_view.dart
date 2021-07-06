@@ -34,21 +34,21 @@ class Report extends StatelessWidget {
     switch (_.groupReport) {
       case 0:
         header =
-            "id_empresa;empresa;id_colaborador;colaborador;email;quebra1;quebra2;matricula;menu;id_tempo;tempo;id_tipo;tipo_atividade;id_midia;nome_midia;tipo_midia;hora_inicio;hora_final;id_emocional;emocional;id_progresso;progresso;ano;mes;dia;dia_semana;periodo;mesano";
+            "id_empresa;empresa;id_colaborador;colaborador;email;quebra1;quebra2;identificação;menu;id_tempo;tempo;id_tipo;tipo_atividade;id_midia;nome_midia;tipo_midia;hora_inicio;hora_final;id_emocional;emocional;id_progresso;progresso;ano;mes;dia;dia_semana;periodo;mesano";
         reportName = "MeDiT_Sessoes_Timers_";
         lines = _generateLinesSessionTimer(_.reportSessionTimer);
         break;
 
       case 1:
         header =
-            "id_empresa;empresa;id_colaborador;colaborador;email;quebra1;quebra2;matricula;id_curso;curso;id_semana;semana;id_aula;aula;id_midia;nome_midia;tipo_midia;hora_inicio;hora_final;id_emocional;emocional;id_progresso;progresso;ano;mes;dia;dia_semana;periodo;mesano";
+            "id_empresa;empresa;id_colaborador;colaborador;email;quebra1;quebra2;identificação;id_curso;curso;id_semana;semana;id_aula;aula;id_midia;nome_midia;tipo_midia;hora_inicio;hora_final;id_emocional;emocional;id_progresso;progresso;ano;mes;dia;dia_semana;periodo;mesano";
         reportName = "MeDiT_Cursos_";
         lines = _generateLinesCourses(_.reportCoursesData);
         break;
 
       case 2:
         header =
-            "id_company;empresa;id_employee;colaborador;email;quebra1;quebra2;matricula;dt_ativacao;ano;mes;dia;mesano";
+            "id_company;empresa;id_employee;colaborador;email;quebra1;quebra2;identificação;dt_ativacao;ano;mes;dia;mesano";
         reportName = "MeDiT_Colaboradores_";
         lines = _generateLinesEmployees(_.reportEmployessData);
         break;

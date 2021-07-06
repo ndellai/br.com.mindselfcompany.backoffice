@@ -134,7 +134,7 @@ class EmployeeView extends StatelessWidget {
                                               errorMaxLines: 2,
                                               filled: true,
                                               hintText:
-                                                  'Pesquise pelo e-mail ou matrícula...',
+                                                  'Pesquise por empresa ou nome ou e-mail ou matrícula...',
                                               hintStyle: TextStyle(
                                                 fontSize:
                                                     constraints.maxHeight *

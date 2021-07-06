@@ -29,8 +29,8 @@ class EmployeeModel {
 
   factory EmployeeModel.fromJson(Map<String, dynamic> json) => EmployeeModel(
       idEmployee: json["idEmployee"],
-      email: json["email"],
-      registration: json["registration"],
+      email: json["email"] ?? "",
+      registration: json["registration"] ?? "",
       company: CompanyModel.fromJson(json["company"]),
       name: json["name"],
       area: json["area"] ?? "",

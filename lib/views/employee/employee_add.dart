@@ -164,7 +164,9 @@ class EmployeeAdd extends StatelessWidget {
   void _clearData(EmployeeController _) {
     _emailController.clear();
     _registrationController.clear();
-    _.idCompany = 1000;
+    _nameController.clear();
+    _areaController.clear();
+    _sectorController.clear();
   }
 
   Future _redirect() async {

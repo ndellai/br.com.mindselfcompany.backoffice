@@ -1,18 +1,18 @@
 import 'dart:convert';
 
-import 'package:br_com_mindselfcompany_backoffice_web/services/model/report_courses_model.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/services/model/report_employess_model.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/services/model/report_session_timer_model.dart';
-import 'package:date_format/date_format.dart';
-import 'package:get/get.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/constants/colours.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/controllers/report_controller.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/model/api_result_model.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/repositories/report_repository.dart';
+import 'package:br_com_mindselfcompany_backoffice_web/services/model/report_courses_model.dart';
+import 'package:br_com_mindselfcompany_backoffice_web/services/model/report_employess_model.dart';
+import 'package:br_com_mindselfcompany_backoffice_web/services/model/report_session_timer_model.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/widgets/bottom_page.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/widgets/load.dart';
+import 'package:date_format/date_format.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:universal_html/html.dart';
 
@@ -305,10 +305,10 @@ class Report extends StatelessWidget {
         saveData = false;
       }
 
-      if (_finalDate.difference(_initialDate).inDays > 360) {
+      if (_finalDate.difference(_initialDate).inDays > 366) {
         _.isValidPeriod = false;
         _.messagePeriod =
-            "A data de pesquisa não pode ser superior a 360 dias.";
+            "A data de pesquisa não pode ser superior a 365 dias.";
         saveData = false;
       }
     }

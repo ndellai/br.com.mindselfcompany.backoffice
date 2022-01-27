@@ -29,7 +29,7 @@ class Setup {
 
     switch (appFlavor) {
       case FlavorType.DEV:
-        url = "http://192.168.15.127:${_apiBasePort.toString()}";
+        url = "http://192.168.15.44:${_apiBasePort.toString()}";
         break;
       case FlavorType.PRD:
         url = "https://www.mindself.services:${_apiBasePort.toString()}";

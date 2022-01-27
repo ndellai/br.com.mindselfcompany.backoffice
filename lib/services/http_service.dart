@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:get/get.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/flavors/setup.dart';
+import 'package:get/get.dart';
+
 import 'model/api_result_vo.dart';
 
 enum Method { POST, GET }

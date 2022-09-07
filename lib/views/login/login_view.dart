@@ -3,6 +3,7 @@ import 'package:br_com_mindselfcompany_backoffice_web/controllers/login_controll
 import 'package:br_com_mindselfcompany_backoffice_web/repositories/login_repository.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/services/http_service.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/widgets/load.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,11 +13,17 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  TextEditingController logemail = TextEditingController();
-  TextEditingController logsenha = TextEditingController();
+  TextEditingController _logemail = TextEditingController();
+  TextEditingController _logsenha = TextEditingController();
+
   LoginController _loginController;
   @override
   void initState() {
+    if (kDebugMode) {
+      _logemail.text = "adm@mindself.com.br";
+      _logsenha.text = "54321";
+    }
+
     Get.lazyPut<LoginRepository>(
         () => LoginRepository(Get.find<HttpService>()));
     Get.lazyPut<LoginController>(
@@ -29,6 +36,8 @@ class _LoginState extends State<Login> {
 
   @override
   void dispose() {
+    _logemail.dispose();
+    _logsenha.dispose();
     _loginController.dispose();
     super.dispose();
   }
@@ -48,8 +57,8 @@ class _LoginState extends State<Login> {
     //
     //
 
-    if ((logemail.text.trim().toLowerCase() != "adm@mindself.com.br") ||
-        (logsenha.text.trim() != "54321")) {
+    if ((_logemail.text.trim().toLowerCase() != "adm@mindself.com.br") ||
+        (_logsenha.text.trim() != "54321")) {
       Get.snackbar(
         "ATENÇÃO!",
         "Login inválido!",
@@ -169,7 +178,7 @@ class _LoginState extends State<Login> {
                                           ),
                                           Flexible(
                                             child: TextFormField(
-                                              controller: logemail,
+                                              controller: _logemail,
                                               cursorColor: Colors.white,
                                               style: TextStyle(
                                                   color: Colors.white),
@@ -255,7 +264,7 @@ class _LoginState extends State<Login> {
                                           ),
                                           Flexible(
                                             child: TextFormField(
-                                              controller: logsenha,
+                                              controller: _logsenha,
                                               cursorColor: Colors.white,
                                               style: TextStyle(
                                                   color: Colors.white),

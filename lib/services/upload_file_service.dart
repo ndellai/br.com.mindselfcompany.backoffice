@@ -6,10 +6,10 @@ import 'package:http_parser/http_parser.dart';
 
 class UploadFileService {
   Future<ApiResultVO> makeUpload(
-      {String route,
-      List<int> fileUpload,
-      bool hasHeader,
-      int idCompany}) async {
+      {String? route,
+      required List<int> fileUpload,
+      bool? hasHeader,
+      int? idCompany}) async {
     Response response;
 
     print(route);

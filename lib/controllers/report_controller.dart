@@ -11,10 +11,10 @@ class ReportController extends GetxController {
   @protected
   final ReportRepository reportRepository;
 
-  List<ReportSessionTimerModel> reportSessionTimer =
+  List<ReportSessionTimerModel>? reportSessionTimer =
       <ReportSessionTimerModel>[].obs;
-  List<ReportCoursesModel> reportCoursesData = <ReportCoursesModel>[].obs;
-  List<ReportEmployeesModel> reportEmployessData = <ReportEmployeesModel>[].obs;
+  List<ReportCoursesModel>? reportCoursesData = <ReportCoursesModel>[].obs;
+  List<ReportEmployeesModel>? reportEmployessData = <ReportEmployeesModel>[].obs;
 
   ReportController(this.reportRepository);
 
@@ -45,7 +45,7 @@ class ReportController extends GetxController {
         await reportRepository.getReportSessionAndTimer(
             ReportDto(initialDate: initialDate, finalDate: finalDate));
 
-    if (result.message.isEmpty) {
+    if (result.message!.isEmpty) {
       reportSessionTimer = result.data;
       _isLoading.value = false;
       return ApiResultModel<bool>(message: result.message, data: true);
@@ -63,7 +63,7 @@ class ReportController extends GetxController {
         await reportRepository.getReportCourses(
             ReportDto(initialDate: initialDate, finalDate: finalDate));
 
-    if (result.message.isEmpty) {
+    if (result.message!.isEmpty) {
       reportCoursesData = result.data;
       _isLoading.value = false;
       return ApiResultModel<bool>(message: result.message, data: true);
@@ -81,7 +81,7 @@ class ReportController extends GetxController {
         await reportRepository.getReportEmployees(
             ReportDto(initialDate: initialDate, finalDate: finalDate));
 
-    if (result.message.isEmpty) {
+    if (result.message!.isEmpty) {
       reportEmployessData = result.data;
       _isLoading.value = false;
       return ApiResultModel<bool>(message: result.message, data: true);

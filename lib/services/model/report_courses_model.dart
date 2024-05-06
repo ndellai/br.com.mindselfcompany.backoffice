@@ -33,35 +33,35 @@ class ReportCoursesModel {
     this.mesano,
   });
 
-  final int idEmpresa;
-  final String empresa;
-  final int idColaborador;
-  final String colaborador;
-  final String email;
+  final int? idEmpresa;
+  final String? empresa;
+  final int? idColaborador;
+  final String? colaborador;
+  final String? email;
   final dynamic quebra1;
-  final String quebra2;
+  final String? quebra2;
   final dynamic matricula;
-  final int idCurso;
-  final String curso;
-  final int idSemana;
-  final String semana;
-  final int idAula;
-  final String aula;
-  final int idMidia;
-  final String nomeMidia;
-  final String tipoMidia;
-  final DateTime horaInicio;
-  final DateTime horaFinal;
-  final int idEmocional;
-  final String emocional;
-  final String idProgresso;
-  final String progresso;
-  final int ano;
-  final int mes;
-  final int dia;
-  final String diaSemana;
-  final String periodo;
-  final String mesano;
+  final int? idCurso;
+  final String? curso;
+  final int? idSemana;
+  final String? semana;
+  final int? idAula;
+  final String? aula;
+  final int? idMidia;
+  final String? nomeMidia;
+  final String? tipoMidia;
+  final DateTime? horaInicio;
+  final DateTime? horaFinal;
+  final int? idEmocional;
+  final String? emocional;
+  final String? idProgresso;
+  final String? progresso;
+  final int? ano;
+  final int? mes;
+  final int? dia;
+  final String? diaSemana;
+  final String? periodo;
+  final String? mesano;
 
   factory ReportCoursesModel.fromRawJson(String str) =>
       ReportCoursesModel.fromJson(json.decode(str));
@@ -119,8 +119,8 @@ class ReportCoursesModel {
         "id_midia": idMidia,
         "nome_midia": nomeMidia,
         "tipo_midia": tipoMidia,
-        "hora_inicio": horaInicio.toIso8601String(),
-        "hora_final": horaFinal.toIso8601String(),
+        "hora_inicio": horaInicio!.toIso8601String(),
+        "hora_final": horaFinal!.toIso8601String(),
         "id_emocional": idEmocional,
         "emocional": emocional,
         "id_progresso": idProgresso,
@@ -133,7 +133,7 @@ class ReportCoursesModel {
         "mesano": mesano,
       };
 
-  static List<ReportCoursesModel> fromJsonList(List list) {
+  static List<ReportCoursesModel>? fromJsonList(List? list) {
     if (list == null) return null;
     return list.map((item) => ReportCoursesModel.fromJson(item)).toList();
   }

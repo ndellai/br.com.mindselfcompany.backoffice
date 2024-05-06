@@ -8,10 +8,10 @@ String loginModelToJson(LoginModel data) => json.encode(data.toJson());
 class LoginModel {
   LoginModel({this.email, this.password, this.token, this.idUser});
 
-  final String email;
-  final String password;
-  final String token;
-  final String idUser;
+  final String? email;
+  final String? password;
+  final String? token;
+  final String? idUser;
 
   factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
         email: json["email"] == null ? null : json["email"],

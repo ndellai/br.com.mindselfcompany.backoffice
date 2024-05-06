@@ -1,18 +1,17 @@
 import 'package:br_com_mindselfcompany_backoffice_web/bindings/company_binding.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/bindings/employee_binding.dart';
+import 'package:br_com_mindselfcompany_backoffice_web/bindings/home_binding.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/bindings/login_binding.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/bindings/report_binding.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/flavors/setup.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/company/company_add.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/company/company_edit.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/employee/employee_add.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/employee/employee_edit.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/views/login/login_view.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/home/home_view.dart';
+import 'package:br_com_mindselfcompany_backoffice_web/views/login/login_view.dart';
+import 'package:br_com_mindselfcompany_backoffice_web/views/user/user_add_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/views/user/user_add_view.dart';
 
 class App extends StatelessWidget {
   @override
@@ -20,7 +19,10 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: Setup.title,
-      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: "Roboto"),
+      theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: "Roboto",
+          useMaterial3: false),
       home: Builder(
         builder: (_) => Login(),
       ),
@@ -36,7 +38,8 @@ class App extends StatelessWidget {
           name: "/home",
           page: () => HomeView(),
           transition: Transition.leftToRight,
-          bindings: [CompanyBinding(), EmployeeBinding(), ReportBinding()],
+          //bindings: [CompanyBinding(), EmployeeBinding(), ReportBinding()],
+          bindings: [HomeBinding(), CompanyBinding(), EmployeeBinding()],
         ),
         GetPage(
           name: "/company_add",
@@ -54,13 +57,13 @@ class App extends StatelessWidget {
           name: "/employee_add",
           page: () => EmployeeAdd(),
           transition: Transition.rightToLeft,
-          bindings: [EmployeeBinding()],
+          bindings: [CompanyBinding(), EmployeeBinding()],
         ),
         GetPage(
           name: "/employee_edt",
           page: () => EmployeeEdit(),
           transition: Transition.rightToLeft,
-          bindings: [EmployeeBinding()],
+          bindings: [CompanyBinding(), EmployeeBinding()],
         ),
         GetPage(
           name: "/user_add",

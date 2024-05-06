@@ -2,13 +2,14 @@ import 'package:br_com_mindselfcompany_backoffice_web/model/employee_model.dart'
 
 class EmployeeDto extends EmployeeModel {
   EmployeeDto(
-      {int idEmployee,
-      String email,
-      String registration,
-      int idCompany,
-      String name,
-      String area,
-      String sector})
+      {int? idEmployee,
+      String? email,
+      String? registration,
+      int? idCompany,
+      String? name,
+      String? area,
+      String? sector,
+      String? phone})
       : super(
             idEmployee: idEmployee,
             email: email,
@@ -16,5 +17,6 @@ class EmployeeDto extends EmployeeModel {
             idCompany: idCompany,
             name: name,
             area: area,
-            sector: sector);
+            sector: sector,
+            phone: phone);
 }

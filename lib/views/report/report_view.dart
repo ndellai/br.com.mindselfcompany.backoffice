@@ -10,7 +10,6 @@ import 'package:br_com_mindselfcompany_backoffice_web/services/model/report_sess
 import 'package:br_com_mindselfcompany_backoffice_web/views/widgets/bottom_page.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/widgets/load.dart';
 import 'package:date_format/date_format.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -36,21 +35,21 @@ class Report extends StatelessWidget {
         header =
             "id_empresa;empresa;id_colaborador;colaborador;email;quebra1;quebra2;identificação;menu;id_tempo;tempo;id_tipo;tipo_atividade;id_midia;nome_midia;tipo_midia;hora_inicio;hora_final;id_emocional;emocional;id_progresso;progresso;ano;mes;dia;dia_semana;periodo;mesano";
         reportName = "MeDiT_Sessoes_Timers_";
-        lines = _generateLinesSessionTimer(_.reportSessionTimer);
+        lines = _generateLinesSessionTimer(_.reportSessionTimer!);
         break;
 
       case 1:
         header =
             "id_empresa;empresa;id_colaborador;colaborador;email;quebra1;quebra2;identificação;id_curso;curso;id_semana;semana;id_aula;aula;id_midia;nome_midia;tipo_midia;hora_inicio;hora_final;id_emocional;emocional;id_progresso;progresso;ano;mes;dia;dia_semana;periodo;mesano";
         reportName = "MeDiT_Cursos_";
-        lines = _generateLinesCourses(_.reportCoursesData);
+        lines = _generateLinesCourses(_.reportCoursesData!);
         break;
 
       case 2:
         header =
             "id_company;empresa;id_employee;colaborador;email;quebra1;quebra2;identificação;dt_ativacao;ano;mes;dia;mesano";
         reportName = "MeDiT_Colaboradores_";
-        lines = _generateLinesEmployees(_.reportEmployessData);
+        lines = _generateLinesEmployees(_.reportEmployessData!);
         break;
     }
 
@@ -74,49 +73,49 @@ class Report extends StatelessWidget {
     lst.forEach((e) {
       lines.add(e.idEmpresa.toString() +
           ";" +
-          e.empresa +
+          e.empresa! +
           ";" +
           e.idColaborador.toString() +
           ";" +
-          e.colaborador +
+          e.colaborador! +
           ";" +
-          e.email +
+          e.email! +
           ";" +
           e.quebra1 +
           ";" +
-          e.quebra2 +
+          e.quebra2! +
           ";" +
           e.matricula +
           ";" +
-          e.menu +
+          e.menu! +
           ";" +
           e.idTempo.toString() +
           ";" +
-          e.tempo +
+          e.tempo! +
           ";" +
           e.idTipo.toString() +
           ";" +
-          e.tipoAtividade +
+          e.tipoAtividade! +
           ";" +
           e.idMidia.toString() +
           ";" +
-          e.nomeMidia +
+          e.nomeMidia! +
           ";" +
-          e.tipoMidia +
+          e.tipoMidia! +
           ";" +
-          formatDate(e.horaInicio,
+          formatDate(e.horaInicio!,
               [dd, '/', mm, '/', yyyy, ' ', HH, ':', nn, ':', ss]) +
           ";" +
-          formatDate(e.horaFinal,
+          formatDate(e.horaFinal!,
               [dd, '/', mm, '/', yyyy, ' ', HH, ':', nn, ':', ss]) +
           ";" +
           e.idEmocional.toString() +
           ";" +
-          e.emocional +
+          e.emocional! +
           ";" +
-          e.idProgresso +
+          e.idProgresso! +
           ";" +
-          e.progresso +
+          e.progresso! +
           ";" +
           e.ano.toString() +
           ";" +
@@ -124,11 +123,11 @@ class Report extends StatelessWidget {
           ";" +
           e.dia.toString() +
           ";" +
-          e.diaSemana +
+          e.diaSemana! +
           ";" +
-          e.periodo +
+          e.periodo! +
           ";" +
-          e.mesano);
+          e.mesano!);
     });
 
     return lines;
@@ -140,51 +139,51 @@ class Report extends StatelessWidget {
     lst.forEach((e) {
       lines.add(e.idEmpresa.toString() +
           ";" +
-          e.empresa +
+          e.empresa! +
           ";" +
           e.idColaborador.toString() +
           ";" +
-          e.colaborador +
+          e.colaborador! +
           ";" +
-          e.email +
+          e.email! +
           ";" +
           e.quebra1 +
           ";" +
-          e.quebra2 +
+          e.quebra2! +
           ";" +
           e.matricula +
           ";" +
           e.idCurso.toString() +
           ";" +
-          e.curso +
+          e.curso! +
           ";" +
           e.idSemana.toString() +
           ";" +
-          e.semana +
+          e.semana! +
           ";" +
           e.idAula.toString() +
           ";" +
-          e.aula +
+          e.aula! +
           ";" +
           e.idMidia.toString() +
           ";" +
-          e.nomeMidia +
+          e.nomeMidia! +
           ";" +
-          e.tipoMidia +
+          e.tipoMidia! +
           ";" +
-          formatDate(e.horaInicio,
+          formatDate(e.horaInicio!,
               [dd, '/', mm, '/', yyyy, ' ', HH, ':', nn, ':', ss]) +
           ";" +
-          formatDate(e.horaFinal,
+          formatDate(e.horaFinal!,
               [dd, '/', mm, '/', yyyy, ' ', HH, ':', nn, ':', ss]) +
           ";" +
           e.idEmocional.toString() +
           ";" +
-          e.emocional +
+          e.emocional! +
           ";" +
-          e.idProgresso +
+          e.idProgresso! +
           ";" +
-          e.progresso +
+          e.progresso! +
           ";" +
           e.ano.toString() +
           ";" +
@@ -192,11 +191,11 @@ class Report extends StatelessWidget {
           ";" +
           e.dia.toString() +
           ";" +
-          e.diaSemana +
+          e.diaSemana! +
           ";" +
-          e.periodo +
+          e.periodo! +
           ";" +
-          e.mesano);
+          e.mesano!);
     });
 
     return lines;
@@ -208,21 +207,21 @@ class Report extends StatelessWidget {
     lst.forEach((e) {
       lines.add(e.idCompany.toString() +
           ";" +
-          e.empresa +
+          e.empresa! +
           ";" +
           e.idEmployee.toString() +
           ";" +
-          e.colaborador +
+          e.colaborador! +
           ";" +
-          e.email +
+          e.email! +
           ";" +
           e.quebra1 +
           ";" +
           e.quebra2 +
           ";" +
-          e.matricula +
+          e.matricula! +
           ";" +
-          formatDate(e.dtAtivacao,
+          formatDate(e.dtAtivacao!,
               [dd, '/', mm, '/', yyyy, ' ', HH, ':', nn, ':', ss]) +
           ";" +
           e.ano.toString() +
@@ -243,7 +242,7 @@ class Report extends StatelessWidget {
 
     var _finalDate = DateTime.now();
 
-    if (!_formKey.currentState.validate()) saveData = false;
+    if (!_formKey.currentState!.validate()) saveData = false;
 
     _.isValidPeriod = true;
     _.isValidReport = true;
@@ -271,9 +270,9 @@ class Report extends StatelessWidget {
 
       if (formatDate(
                   DateTime(
-                      int.tryParse(initialDate[2]),
-                      int.tryParse(initialDate[1]),
-                      int.tryParse(initialDate[0])),
+                      int.tryParse(initialDate[2])!,
+                      int.tryParse(initialDate[1])!,
+                      int.tryParse(initialDate[0])!),
                   [dd, '/', mm, '/', yyyy]) !=
               _initialDateController.text &&
           saveData) {
@@ -283,8 +282,8 @@ class Report extends StatelessWidget {
       }
 
       if (formatDate(
-                  DateTime(int.tryParse(finalDate[2]),
-                      int.tryParse(finalDate[1]), int.tryParse(finalDate[0])),
+                  DateTime(int.tryParse(finalDate[2])!,
+                      int.tryParse(finalDate[1])!, int.tryParse(finalDate[0])!),
                   [dd, '/', mm, '/', yyyy]) !=
               _finalDateController.text &&
           saveData) {
@@ -293,11 +292,11 @@ class Report extends StatelessWidget {
         saveData = false;
       }
 
-      _initialDate = DateTime(int.tryParse(initialDate[2]),
-          int.tryParse(initialDate[1]), int.tryParse(initialDate[0]));
+      _initialDate = DateTime(int.tryParse(initialDate[2])!,
+          int.tryParse(initialDate[1])!, int.tryParse(initialDate[0])!);
 
-      _finalDate = DateTime(int.tryParse(finalDate[2]),
-          int.tryParse(finalDate[1]), int.tryParse(finalDate[0]));
+      _finalDate = DateTime(int.tryParse(finalDate[2])!,
+          int.tryParse(finalDate[1])!, int.tryParse(finalDate[0])!);
 
       if (_initialDate.isAfter(_finalDate)) {
         _.isValidPeriod = false;
@@ -320,12 +319,12 @@ class Report extends StatelessWidget {
               ? _.getCoursesReport(_initialDate, _finalDate)
               : _.getEmployessReport(_initialDate, _finalDate)));
 
-      if (result.message.isEmpty) {
+      if (result.message!.isEmpty) {
         _openReport(_);
       } else {
         Get.snackbar(
           "ERRO",
-          result.message,
+          result.message!,
           colorText: Colors.white,
           backgroundColor: Colors.black,
           boxShadows: [
@@ -340,17 +339,16 @@ class Report extends StatelessWidget {
     }
   }
 
-  Future _redirect() async {
+  Future<bool> _redirect() async {
     await Get.delete<ReportController>();
     await Get.offAllNamed("/home", arguments: [0]);
+    return Future.value(true);
   }
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        return await _redirect();
-      },
+    return PopScope(
+      onPopInvoked: (didPop) async => await _redirect,
       child: Scaffold(
         bottomNavigationBar: BottomPage(
           margin: 80,
@@ -490,7 +488,7 @@ class Report extends StatelessWidget {
                                                                       .maxWidth *
                                                                   0.01)),
                                                       value: 0,
-                                                      onChanged: (val) {
+                                                      onChanged: (dynamic val) {
                                                         _.groupReport = val;
                                                       },
                                                     ),
@@ -516,7 +514,7 @@ class Report extends StatelessWidget {
                                                                       .maxWidth *
                                                                   0.01)),
                                                       value: 1,
-                                                      onChanged: (val) {
+                                                      onChanged: (dynamic val) {
                                                         _.groupReport = val;
                                                       },
                                                     ),
@@ -543,7 +541,7 @@ class Report extends StatelessWidget {
                                                                       .maxWidth *
                                                                   0.01)),
                                                       value: 2,
-                                                      onChanged: (val) {
+                                                      onChanged: (dynamic val) {
                                                         _.groupReport = val;
                                                       },
                                                     ),

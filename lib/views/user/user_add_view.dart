@@ -1,7 +1,6 @@
-import 'package:get/get.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/constants/colours.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UserAdd extends StatefulWidget {
   @override

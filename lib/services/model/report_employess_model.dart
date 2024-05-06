@@ -17,19 +17,19 @@ class ReportEmployeesModel {
     this.mesano,
   });
 
-  final int idCompany;
-  final String empresa;
-  final int idEmployee;
-  final String colaborador;
-  final String email;
+  final int? idCompany;
+  final String? empresa;
+  final int? idEmployee;
+  final String? colaborador;
+  final String? email;
   final dynamic quebra1;
   final dynamic quebra2;
-  final String matricula;
-  final DateTime dtAtivacao;
-  final int ano;
-  final int mes;
-  final int dia;
-  final String mesano;
+  final String? matricula;
+  final DateTime? dtAtivacao;
+  final int? ano;
+  final int? mes;
+  final int? dia;
+  final String? mesano;
 
   factory ReportEmployeesModel.fromRawJson(String str) =>
       ReportEmployeesModel.fromJson(json.decode(str));
@@ -62,14 +62,14 @@ class ReportEmployeesModel {
         "quebra1": quebra1,
         "quebra2": quebra2,
         "matricula": matricula,
-        "dt_ativacao": dtAtivacao.toIso8601String(),
+        "dt_ativacao": dtAtivacao!.toIso8601String(),
         "ano": ano,
         "mes": mes,
         "dia": dia,
         "mesano": mesano,
       };
 
-  static List<ReportEmployeesModel> fromJsonList(List list) {
+  static List<ReportEmployeesModel>? fromJsonList(List? list) {
     if (list == null) return null;
     return list.map((item) => ReportEmployeesModel.fromJson(item)).toList();
   }

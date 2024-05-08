@@ -1,3 +1,4 @@
+import 'package:br_com_mindselfcompany_backoffice_web/controllers/report_controller.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/repositories/report_repository.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/services/http_service.dart';
 import 'package:get/get.dart';
@@ -7,5 +8,8 @@ class ReportBinding implements Bindings {
   void dependencies() {
     Get.lazyPut<ReportRepository>(
         () => ReportRepository(Get.find<HttpService>()));
+
+    Get.lazyPut<ReportController>(
+        () => ReportController(Get.find<ReportRepository>()));
   }
 }

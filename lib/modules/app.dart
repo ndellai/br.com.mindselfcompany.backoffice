@@ -13,6 +13,8 @@ import 'package:br_com_mindselfcompany_backoffice_web/views/user/user_add_view.d
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../bindings/report_binding.dart';
+
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -38,8 +40,12 @@ class App extends StatelessWidget {
           name: "/home",
           page: () => HomeView(),
           transition: Transition.leftToRight,
-          //bindings: [CompanyBinding(), EmployeeBinding(), ReportBinding()],
-          bindings: [HomeBinding(), CompanyBinding(), EmployeeBinding()],
+          bindings: [
+            HomeBinding(),
+            CompanyBinding(),
+            EmployeeBinding(),
+            ReportBinding()
+          ],
         ),
         GetPage(
           name: "/company_add",

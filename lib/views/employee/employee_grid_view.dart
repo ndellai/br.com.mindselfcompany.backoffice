@@ -25,7 +25,7 @@ class EmployeeGridView extends GetView<EmployeeController> {
               Container(
                 alignment: Alignment.center,
                 height: 30,
-                width: constraints!.maxWidth * 0.15,
+                width: constraints!.maxWidth * 0.09,
                 color: Colors.grey.shade300,
                 child: Text(
                   employee.idEmployee.toString(),
@@ -40,7 +40,7 @@ class EmployeeGridView extends GetView<EmployeeController> {
               Container(
                 alignment: Alignment.center,
                 height: 30,
-                width: constraints!.maxWidth * 0.20,
+                width: constraints!.maxWidth * 0.15,
                 color: Colors.grey.shade300,
                 child: Text(
                   employee.company!.name!,
@@ -71,10 +71,25 @@ class EmployeeGridView extends GetView<EmployeeController> {
               Container(
                 alignment: Alignment.center,
                 height: 30,
-                width: constraints!.maxWidth * 0.20,
+                width: constraints!.maxWidth * 0.15,
                 color: Colors.grey.shade300,
                 child: Text(
                   employee.registration ?? "",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: constraints!.maxHeight * 0.03),
+                ),
+              ),
+              SizedBox(
+                width: 4,
+              ),
+              Container(
+                alignment: Alignment.center,
+                height: 30,
+                width: constraints!.maxWidth * 0.15,
+                color: Colors.grey.shade300,
+                child: Text(
+                  employee.phone ?? "",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: constraints!.maxHeight * 0.03),

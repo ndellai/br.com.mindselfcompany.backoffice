@@ -118,7 +118,7 @@ class EmployeeView extends GetView<EmployeeController> {
                                         Container(
                                           alignment: Alignment.center,
                                           height: 40,
-                                          width: constraints.maxWidth * 0.15,
+                                          width: constraints.maxWidth * 0.09,
                                           color: Colours.Blue,
                                           child: Text(
                                             "ID",
@@ -136,7 +136,7 @@ class EmployeeView extends GetView<EmployeeController> {
                                         Container(
                                           alignment: Alignment.center,
                                           height: 40,
-                                          width: constraints.maxWidth * 0.20,
+                                          width: constraints.maxWidth * 0.15,
                                           color: Colours.Blue,
                                           child: Text(
                                             "EMPRESA",
@@ -173,10 +173,28 @@ class EmployeeView extends GetView<EmployeeController> {
                                         Container(
                                           alignment: Alignment.center,
                                           height: 40,
-                                          width: constraints.maxWidth * 0.20,
+                                          width: constraints.maxWidth * 0.15,
                                           color: Colours.Blue,
                                           child: Text(
                                             "MATRÍCULA",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize:
+                                                    constraints.maxHeight *
+                                                        0.03),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Container(
+                                          alignment: Alignment.center,
+                                          height: 40,
+                                          width: constraints.maxWidth * 0.15,
+                                          color: Colours.Blue,
+                                          child: Text(
+                                            "CELULAR",
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.bold,

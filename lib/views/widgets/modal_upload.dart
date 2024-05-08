@@ -66,7 +66,7 @@ nome;;123456789;;;
                     Container(
                       alignment: Alignment.center,
                       child: Text(
-                        "As linhas fora deste padrão serão ignoradas.",
+                        "As linhas fora deste padrão serão ignoradas.\nNão envie email e telefone na mesma linha, pois o telefone será descartado.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colours.Blue),

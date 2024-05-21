@@ -1,3 +1,4 @@
+import 'package:br_com_mindselfcompany_backoffice_web/bindings/company_authentication_binding.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/bindings/company_binding.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/bindings/employee_binding.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/bindings/home_binding.dart';
@@ -9,11 +10,11 @@ import 'package:br_com_mindselfcompany_backoffice_web/views/employee/employee_ad
 import 'package:br_com_mindselfcompany_backoffice_web/views/employee/employee_edit.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/home/home_view.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/views/login/login_view.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/views/user/user_add_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../bindings/report_binding.dart';
+import '../views/user/user_add_view.dart';
 
 class App extends StatelessWidget {
   @override
@@ -44,7 +45,8 @@ class App extends StatelessWidget {
             HomeBinding(),
             CompanyBinding(),
             EmployeeBinding(),
-            ReportBinding()
+            ReportBinding(),
+            CompanyAuthenticationBinding()
           ],
         ),
         GetPage(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../company/company_view.dart';
+import '../company_authentication/company_authentication_edt.dart';
 import '../employee/employee_view.dart';
 import '../report/report_view.dart';
 
@@ -34,6 +35,9 @@ class HomeView extends GetView<HomeController> {
                     widget = EmployeeView();
                     break;
                   case 2:
+                    widget = CompanyAuthentication();
+                    break;
+                  case 3:
                     widget = Report();
                     break;
                   default:
@@ -107,6 +111,15 @@ class HomeView extends GetView<HomeController> {
                             //       child: Icon(Icons.face)),
                             //   label: Text('Usuários'),
                             // ),
+                            NavigationRailDestination(
+                              icon: Tooltip(
+                                  message: "Autenticação Empresa",
+                                  child: Icon(Icons.lock_outline_rounded)),
+                              selectedIcon: Tooltip(
+                                  message: "Autenticação Empresa",
+                                  child: Icon(Icons.lock_outline_rounded)),
+                              label: Text('Autenticação Empresa'),
+                            ),
                             NavigationRailDestination(
                               icon: Tooltip(
                                   message: "Relatórios",

@@ -222,9 +222,7 @@ class EmployeeView extends GetView<EmployeeController> {
                                       ],
                                     ),
                                   ),
-                                  EmployeeGridView(
-                                      constraints: constraints,
-                                      companies: controller.employees),
+                                  EmployeeGridView(constraints: constraints),
                                   SizedBox(
                                     height: 25,
                                   ),

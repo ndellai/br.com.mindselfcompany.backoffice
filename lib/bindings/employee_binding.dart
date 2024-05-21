@@ -14,6 +14,9 @@ class EmployeeBinding implements Bindings {
     Get.lazyPut<EmployeeRepository>(() => EmployeeRepository(
         Get.find<HttpService>(), Get.find<UploadFileService>()));
 
+    Get.lazyPut<CompanyRepository>(
+        () => CompanyRepository(Get.find<HttpService>()));
+
     Get.lazyPut<EmployeeController>(() => EmployeeController(
         Get.find<EmployeeRepository>(), Get.find<CompanyRepository>()));
   }

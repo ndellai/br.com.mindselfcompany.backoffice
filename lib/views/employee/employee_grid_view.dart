@@ -1,19 +1,16 @@
 import 'package:br_com_mindselfcompany_backoffice_web/controllers/employee_controller.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/model/employee_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class EmployeeGridView extends GetView<EmployeeController> {
-  final List<EmployeeModel>? companies;
   final BoxConstraints? constraints;
 
-  const EmployeeGridView({Key? key, this.companies, this.constraints})
-      : super(key: key);
+  const EmployeeGridView({Key? key, this.constraints}) : super(key: key);
 
   List<Widget> getRows() {
     List<Widget> _widget = [];
 
-    companies!.forEach((employee) {
+    controller.employees.forEach((employee) {
       _widget.add(
         Container(
           alignment: Alignment.topCenter,

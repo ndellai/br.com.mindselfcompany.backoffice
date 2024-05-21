@@ -174,13 +174,7 @@ class CompanyView extends GetView<CompanyController> {
                                         ],
                                       ),
                                     ),
-                                    CompanyGridView(
-                                      constraints: constraints,
-                                      companies: controller.companies,
-                                      // onDeleteCompany: controller.deleteCompany,
-                                      // onRedirect: controller.redirect,
-                                      // companyController: controller,
-                                    ),
+                                    CompanyGridView(constraints: constraints),
                                     SizedBox(
                                       height: 25,
                                     ),

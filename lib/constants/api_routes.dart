@@ -19,7 +19,27 @@ class ApiRoutes {
   static final String reportConsolidate =
       "/msc/api/Report/GetReportConsolidate";
 
-  static final String reportSessionAndTimer = "/msc/api/Reports/GetSessionAndTimer";
+  static final String reportSessionAndTimer =
+      "/msc/api/Reports/GetSessionAndTimer";
   static final String reportCourses = "/msc/api/Reports/GetCourses";
   static final String reportEmployess = "/msc/api/Reports/GetActiveEmployees";
+
+  static final String applicationLst = "/msc/api/Application/GetApplication";
+  static final String applicationAdd = "/msc/api/Application/InsertApplication";
+  static final String applicationDel = "/msc/api/Application/DeleteApplication";
+  static final String applicationEdt = "/msc/api/Application/UpdateApplication";
+
+  static final String authenticationLst =
+      "/msc/api/Authentication/GetAuthentication";
+  static final String authenticationAdd =
+      "/msc/api/Authentication/InsertAuthentication";
+  static final String authenticationDel =
+      "/msc/api/Authentication/DeleteAuthentication";
+  static final String authenticationEdt =
+      "/msc/api/Authentication/UpdateAuthentication";
+
+  static final String companyApplicationAuthenticationEdt =
+      "/msc/api/CompanyApplicationAuthentication/UpdateCompanyApplicationAuthentication";
+  static final String companyApplicationAuthenticationLst =
+      "/msc/api/CompanyApplicationAuthentication/GetCompanyApplicationAuthentication";
 }

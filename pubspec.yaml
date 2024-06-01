@@ -1,7 +1,7 @@
 name: br_com_mindselfcompany_backoffice_web
 description: BackOffice de configurações do aplicativo MeDiT.
 
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: "none" 
 
 version: 1.0.0+1
 

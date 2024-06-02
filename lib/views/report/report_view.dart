@@ -326,6 +326,10 @@ class Report extends GetView<ReportController> {
                                                 Flexible(
                                                   child: Container(
                                                     child: TextFormField(
+                                                      style: TextStyle(
+                                                          fontSize: constraints
+                                                                  .maxHeight *
+                                                              0.03),
                                                       inputFormatters: [
                                                         controller.formatter
                                                       ],
@@ -390,6 +394,10 @@ class Report extends GetView<ReportController> {
                                                 Flexible(
                                                   child: Container(
                                                     child: TextFormField(
+                                                      style: TextStyle(
+                                                          fontSize: constraints
+                                                                  .maxHeight *
+                                                              0.03),
                                                       inputFormatters: [
                                                         controller.formatter
                                                       ],

@@ -1,7 +1,8 @@
 name: br_com_mindselfcompany_backoffice_web
 description: BackOffice de configurações do aplicativo MeDiT.
 
-publish_to: "none" 
+publish_to: "none"
+#fvm flutter build web -v -t "lib/flavors/main_prd.dart" --release 
 
 version: 1.0.0+1
 

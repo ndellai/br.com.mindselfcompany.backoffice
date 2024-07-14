@@ -4,7 +4,7 @@ enum FlavorType {
 }
 
 class Setup {
-  static FlavorType appFlavor;
+  static FlavorType? appFlavor;
 
   static String get title {
     String title;
@@ -29,7 +29,7 @@ class Setup {
 
     switch (appFlavor) {
       case FlavorType.DEV:
-        url = "http://192.168.15.44:${_apiBasePort.toString()}";
+        url = "http://192.168.15.88:${_apiBasePort.toString()}";
         break;
       case FlavorType.PRD:
         url = "https://www.mindself.services:${_apiBasePort.toString()}";
@@ -47,7 +47,7 @@ class Setup {
 
     switch (appFlavor) {
       case FlavorType.DEV:
-        port = 52728;
+        port = 52727;
         break;
       case FlavorType.PRD:
         port = 443;

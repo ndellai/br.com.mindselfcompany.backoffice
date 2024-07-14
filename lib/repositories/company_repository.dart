@@ -7,6 +7,8 @@ import 'package:br_com_mindselfcompany_backoffice_web/model/pagination_model.dar
 import 'package:br_com_mindselfcompany_backoffice_web/repositories/base_repository.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/services/http_service.dart';
 
+import '../dto/application_dto.dart';
+
 class CompanyRepository extends BaseRepository {
   final HttpService httpService;
   CompanyRepository(this.httpService) : super(httpService);
@@ -86,5 +88,21 @@ class CompanyRepository extends BaseRepository {
         header: Header.Yes);
 
     return ApiResultModel<bool>(message: response.message, data: response.data);
+  }
+
+  Future<ApiResultModel<PaginationModel>> listApplication(
+      ApplicationDto applicationDto, int actualPage) async {
+    var response = await httpService.invokeApi<ApplicationDto>(
+        method: Method.POST,
+        route: ApiRoutes.companyLst,
+        data: applicationDto,
+        header: Header.No,
+        parameters: "actualPage=" + actualPage.toString());
+
+    return ApiResultModel<PaginationModel>(
+        message: response.message,
+        data: PaginationModel(
+            totalPages: response.data["totalPages"],
+            pagedList: response.data["pagedList"]));
   }
 }

@@ -16,16 +16,18 @@ class EmployeeModel {
       this.idCompany,
       this.name,
       this.area,
-      this.sector});
+      this.sector,
+      this.phone});
 
-  int idEmployee;
-  String email;
-  String registration;
-  CompanyModel company;
-  int idCompany;
-  String name;
-  String area;
-  String sector;
+  int? idEmployee;
+  String? email;
+  String? registration;
+  CompanyModel? company;
+  int? idCompany;
+  String? name;
+  String? area;
+  String? sector;
+  String? phone;
 
   factory EmployeeModel.fromJson(Map<String, dynamic> json) => EmployeeModel(
       idEmployee: json["idEmployee"],
@@ -34,7 +36,8 @@ class EmployeeModel {
       company: CompanyModel.fromJson(json["company"]),
       name: json["name"],
       area: json["area"] ?? "",
-      sector: json["sector"] ?? "");
+      sector: json["sector"] ?? "",
+      phone: json["phone"] ?? "");
 
   Map<String, dynamic> toJson() => {
         "idEmployee": idEmployee,
@@ -43,10 +46,11 @@ class EmployeeModel {
         "idCompany": idCompany,
         "name": name,
         "area": area,
-        "sector": sector
+        "sector": sector,
+        "phone": phone
       };
 
-  static List<EmployeeModel> fromJsonList(List list) {
+  static List<EmployeeModel>? fromJsonList(List? list) {
     if (list == null) return null;
     return list.map((item) => EmployeeModel.fromJson(item)).toList();
   }

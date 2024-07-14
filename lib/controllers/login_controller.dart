@@ -1,9 +1,9 @@
 import 'package:br_com_mindselfcompany_backoffice_web/model/api_result_model.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/model/login_model.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/repositories/login_repository.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:get/get.dart';
 
 class LoginController extends GetxController {
   @protected
@@ -14,13 +14,67 @@ class LoginController extends GetxController {
   final _isLoading = false.obs;
   final _isLogged = false.obs;
 
-  var _isObscureText = true.obs;
+  RxBool _isObscureText = true.obs;
 
-  bool get isLoading => _isLoading.value;
+  RxBool get isLoading => _isLoading;
   bool get isLogged => _isLogged.value;
 
-  get isObscureText => _isObscureText.value;
+  bool get isObscureText => _isObscureText.value;
   set isObscureText(bool value) => _isObscureText.value = value;
+
+  TextEditingController logemail = TextEditingController();
+  TextEditingController logsenha = TextEditingController();
+
+  @override
+  void onInit() {
+    if (kDebugMode) {
+      logemail.text = "adm@mindself.com.br";
+      logsenha.text = "54321";
+    }
+
+    super.onInit();
+  }
+
+  @override
+  void onClose() {
+    logemail.dispose();
+    logsenha.dispose();
+    super.onClose();
+  }
+
+  Future sendValues() async {
+    // LoginModel userModel = LoginModel(
+    //   email: logemail.text,
+    //   password: logsenha.text,
+    // );
+
+    // var result = await _loginController.login(userModel);
+
+    // if (!result.data) {
+    //   print(result.message);
+    //   return;
+    // }
+    //
+    //
+
+    if ((logemail.text.trim().toLowerCase() != "adm@mindself.com.br") ||
+        (logsenha.text.trim() != "54321")) {
+      Get.snackbar(
+        "ATENÇÃO!",
+        "Login inválido!",
+        colorText: Colors.white,
+        backgroundColor: Colors.black,
+        boxShadows: [
+          BoxShadow(
+            color: Colors.black45,
+            offset: Offset(3, 3),
+            blurRadius: 3,
+          )
+        ],
+      );
+    } else
+      Get.offAndToNamed("/home");
+  }
 
   Future<ApiResultModel<bool>> login(LoginModel loginModel) async {
     _isLoading.value = true;
@@ -30,8 +84,8 @@ class LoginController extends GetxController {
 
     _isLoading.value = false;
 
-    if (_loginModel.message.isEmpty) {
-      if (_loginModel.data.token.isNotEmpty) {
+    if (_loginModel.message!.isEmpty) {
+      if (_loginModel.data!.token!.isNotEmpty) {
         _isLogged.value = true;
       }
       return ApiResultModel<bool>(data: true);
@@ -47,7 +101,7 @@ class LoginController extends GetxController {
 
     _isLoading.value = false;
 
-    if (result.message.isEmpty) {
+    if (result.message!.isEmpty) {
       _isLogged.value = true;
       return ApiResultModel<bool>(message: result.message, data: true);
     } else

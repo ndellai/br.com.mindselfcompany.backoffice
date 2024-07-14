@@ -9,5 +9,5 @@ class WeekDay {
 
   static Map<int, String> get weekDay => _weekDay;
 
-  static String getWeekDayName(int index) => _weekDay[index];
+  static String? getWeekDayName(int index) => _weekDay[index];
 }

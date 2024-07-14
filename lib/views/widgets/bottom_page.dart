@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/constants/colours.dart';
 
 class BottomPage extends StatelessWidget {
-  final double margin;
+  final double? margin;
 
   BottomPage({this.margin});
 
@@ -18,7 +18,7 @@ class BottomPage extends StatelessWidget {
         children: [
           Container(
             width: 200,
-            margin: EdgeInsets.only(left: margin),
+            margin: EdgeInsets.only(left: margin!),
             child: Text("MeDiT",
                 style: TextStyle(
                     color: Colors.white,

@@ -4,6 +4,6 @@ class PaginationModel {
     this.pagedList,
   });
 
-  int totalPages;
-  List<dynamic> pagedList;
+  int? totalPages;
+  List<dynamic>? pagedList;
 }

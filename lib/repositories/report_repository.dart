@@ -19,7 +19,7 @@ class ReportRepository extends BaseRepository {
         data: reportDto,
         header: Header.No,
         parameters:
-            "initialDate=${reportDto.initialDate.toIso8601String()}&finalDate=${reportDto.finalDate.toIso8601String()}");
+            "initialDate=${reportDto.initialDate!.toIso8601String()}&finalDate=${reportDto.finalDate!.toIso8601String()}");
 
     return ApiResultModel<List<ReportSessionTimerModel>>(
         message: response.message,
@@ -34,7 +34,7 @@ class ReportRepository extends BaseRepository {
         data: reportDto,
         header: Header.No,
         parameters:
-            "initialDate=${reportDto.initialDate.toIso8601String()}&finalDate=${reportDto.finalDate.toIso8601String()}");
+            "initialDate=${reportDto.initialDate!.toIso8601String()}&finalDate=${reportDto.finalDate!.toIso8601String()}");
 
     return ApiResultModel<List<ReportCoursesModel>>(
         message: response.message,
@@ -49,7 +49,7 @@ class ReportRepository extends BaseRepository {
         data: reportDto,
         header: Header.No,
         parameters:
-            "initialDate=${reportDto.initialDate.toIso8601String()}&finalDate=${reportDto.finalDate.toIso8601String()}");
+            "initialDate=${reportDto.initialDate!.toIso8601String()}&finalDate=${reportDto.finalDate!.toIso8601String()}");
 
     return ApiResultModel<List<ReportEmployeesModel>>(
         message: response.message,

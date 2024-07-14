@@ -11,8 +11,8 @@ class CompanyModel {
     this.name,
   });
 
-  final int idCompany;
-  final String name;
+  final int? idCompany;
+  final String? name;
 
   factory CompanyModel.fromJson(Map<String, dynamic> json) => CompanyModel(
         idCompany: json["idCompany"],
@@ -24,7 +24,7 @@ class CompanyModel {
         "name": name,
       };
 
-  static List<CompanyModel> fromJsonList(List list) {
+  static List<CompanyModel>? fromJsonList(List? list) {
     if (list == null) return null;
     return list.map((item) => CompanyModel.fromJson(item)).toList();
   }

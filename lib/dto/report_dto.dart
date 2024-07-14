@@ -1,6 +1,6 @@
-import 'package:br_com_mindselfcompany_backoffice_web/model/report_consolidate_model.dart';
+import 'package:br_com_mindselfcompany_backoffice_web/model/report_model.dart';
 
-class ReportDto extends ReportConsolidateModel {
-  ReportDto({DateTime initialDate, DateTime finalDate})
+class ReportDto extends ReportModel {
+  ReportDto({DateTime? initialDate, DateTime? finalDate})
       : super(initialDate: initialDate, finalDate: finalDate);
 }

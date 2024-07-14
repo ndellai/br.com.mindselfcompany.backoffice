@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:get/get.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/flavors/setup.dart';
+import 'package:get/get.dart';
+
 import 'model/api_result_vo.dart';
 
 enum Method { POST, GET }
@@ -11,11 +12,11 @@ class HttpService extends GetConnect {
   final String contentType = "application/json";
 
   Future<ApiResultVO> invokeApi<T>(
-      {Method method,
-      String route,
-      T data,
-      Header header,
-      String parameters}) async {
+      {Method? method,
+      String? route,
+      T? data,
+      Header? header,
+      String? parameters}) async {
     Response response;
 
     print(method);
@@ -24,7 +25,7 @@ class HttpService extends GetConnect {
     print(jsonEncode(data));
     print(
       "${Setup.apiBaseUrl}$route" +
-          ((parameters ?? "").isEmpty ? "" : "?" + parameters),
+          ((parameters ?? "").isEmpty ? "" : "?" + parameters!),
     );
 
     try {
@@ -32,14 +33,14 @@ class HttpService extends GetConnect {
         case Method.GET:
           response = await get(
               "${Setup.apiBaseUrl}$route" +
-                  ((parameters ?? "").isEmpty ? "" : "?" + parameters),
+                  ((parameters ?? "").isEmpty ? "" : "?" + parameters!),
               contentType: contentType,
               headers: (header == Header.Yes ? await _getHeader() : null));
           break;
         default:
           response = await post(
               "${Setup.apiBaseUrl}$route" +
-                  ((parameters ?? "").isEmpty ? "" : "?" + parameters),
+                  ((parameters ?? "").isEmpty ? "" : "?" + parameters!),
               jsonEncode(data),
               contentType: contentType,
               headers: (header == Header.Yes ? await _getHeader() : null));

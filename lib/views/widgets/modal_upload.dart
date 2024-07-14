@@ -1,16 +1,16 @@
+import 'package:br_com_mindselfcompany_backoffice_web/constants/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:br_com_mindselfcompany_backoffice_web/constants/colours.dart';
 
 class ModalUpload extends StatefulWidget {
-  const ModalUpload({Key key}) : super(key: key);
+  const ModalUpload({Key? key}) : super(key: key);
 
   @override
   _ModalUploadState createState() => _ModalUploadState();
 }
 
 class _ModalUploadState extends State<ModalUpload> {
-  bool _value = false;
+  bool? _value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _ModalUploadState extends State<ModalUpload> {
                   )),
               titlePadding: EdgeInsets.all(0),
               content: Container(
-                width: 450,
+                width: 550,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,7 +46,7 @@ class _ModalUploadState extends State<ModalUpload> {
                     Container(
                       alignment: Alignment.center,
                       child: Text(
-                        "O conteúdo do arquivo dese ser separado por ; conforme o layout abaixo:",
+                        "O conteúdo do arquivo deve ser separado por ; conforme o layout abaixo:",
                         textAlign: TextAlign.center,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
@@ -54,9 +54,9 @@ class _ModalUploadState extends State<ModalUpload> {
                     SizedBox(height: 10),
                     Container(
                       child: Text(
-                        '''nome;email-1@empresa.com.br;12345678;campo1;campo2
-nome;email-2@empresa.com.br;;;
-nome;;123456789;;
+                        '''nome;email-1@empresa.com.br;12345678;campo1;campo2;telefone
+nome;email-2@empresa.com.br;;;;
+nome;;123456789;;;
 ''',
                         textAlign: TextAlign.left,
                         style: TextStyle(
@@ -66,7 +66,7 @@ nome;;123456789;;
                     Container(
                       alignment: Alignment.center,
                       child: Text(
-                        "As linhas fora deste padrão serão ignoradas.",
+                        "As linhas fora deste padrão serão ignoradas.\nNão envie email e telefone na mesma linha, pois o telefone será descartado.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colours.Blue),

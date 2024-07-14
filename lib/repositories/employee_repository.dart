@@ -13,11 +13,11 @@ class EmployeeRepository extends BaseRepository {
       : super(httpService);
 
   Future<ApiResultModel<PaginationModel>> listEmployee(
-      EmployeeDto answerDto, int actualPage) async {
+      EmployeeDto employeeDto, int actualPage) async {
     var response = await httpService.invokeApi<EmployeeDto>(
         method: Method.POST,
         route: ApiRoutes.employeeLst,
-        data: answerDto,
+        data: employeeDto,
         header: Header.No,
         parameters: "actualPage=" + actualPage.toString());
 
@@ -28,22 +28,22 @@ class EmployeeRepository extends BaseRepository {
             pagedList: response.data["pagedList"]));
   }
 
-  Future<ApiResultModel<bool>> insertEmployee(EmployeeDto answerDto) async {
+  Future<ApiResultModel<bool>> insertEmployee(EmployeeDto employeeDto) async {
     var response = await httpService.invokeApi(
         method: Method.POST,
         route: ApiRoutes.employeeAdd,
-        data: answerDto,
+        data: employeeDto,
         header: Header.Yes);
 
     return ApiResultModel<bool>(message: response.message, data: response.data);
   }
 
   Future<ApiResultModel<PaginationModel>> getEmployee(
-      EmployeeDto answerDto, int actualPage) async {
+      EmployeeDto employeeDto, int actualPage) async {
     var response = await httpService.invokeApi(
         method: Method.POST,
         route: ApiRoutes.employeeLst,
-        data: answerDto,
+        data: employeeDto,
         header: Header.Yes,
         parameters: "actualPage=" + actualPage.toString());
 
@@ -54,21 +54,21 @@ class EmployeeRepository extends BaseRepository {
             pagedList: response.data["pagedList"]));
   }
 
-  Future<ApiResultModel<bool>> updateEmployee(EmployeeDto answerDto) async {
+  Future<ApiResultModel<bool>> updateEmployee(EmployeeDto employeeDto) async {
     var response = await httpService.invokeApi(
         method: Method.POST,
         route: ApiRoutes.employeeEdt,
-        data: answerDto,
+        data: employeeDto,
         header: Header.Yes);
 
     return ApiResultModel<bool>(message: response.message, data: response.data);
   }
 
-  Future<ApiResultModel<bool>> deleteEmployee(EmployeeDto answerDto) async {
+  Future<ApiResultModel<bool>> deleteEmployee(EmployeeDto employeeDto) async {
     var response = await httpService.invokeApi(
         method: Method.POST,
         route: ApiRoutes.employeeDel,
-        data: answerDto,
+        data: employeeDto,
         header: Header.Yes);
 
     return ApiResultModel<bool>(message: response.message, data: response.data);

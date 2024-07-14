@@ -8,13 +8,19 @@
       "name": "DEV",
       "request": "launch",
       "type": "dart",
-      "program": "lib/flavors/main_dev.dart"
+      "program": "lib/flavors/main_dev.dart",
+      "args": [
+        "-v"
+      ]
     },
     {
       "name": "PRD",
       "request": "launch",
       "type": "dart",
-      "program": "lib/flavors/main_prd.dart"
+      "program": "lib/flavors/main_prd.dart",
+      "args": [
+        "-v"
+      ]
     }
   ]
 }

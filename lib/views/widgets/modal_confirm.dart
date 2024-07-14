@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:br_com_mindselfcompany_backoffice_web/constants/colours.dart';
 
 class ModalConfirm extends StatelessWidget {
-  final String title;
-  final String text;
+  final String? title;
+  final String? text;
 
-  const ModalConfirm({Key key, this.title, this.text}) : super(key: key);
+  const ModalConfirm({Key? key, this.title, this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ModalConfirm extends StatelessWidget {
                       color: Colours.Purple),
                   height: 30,
                   child: Text(
-                    title,
+                    title!,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
@@ -40,7 +40,7 @@ class ModalConfirm extends StatelessWidget {
                     Container(
                       alignment: Alignment.center,
                       child: Text(
-                        text,
+                        text!,
                         textAlign: TextAlign.center,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),

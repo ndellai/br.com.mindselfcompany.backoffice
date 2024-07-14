@@ -15,13 +15,13 @@ class UserModel {
     this.active,
   });
 
-  final String idUser;
-  final String name;
-  final String email;
-  final String password;
-  final String cellPhone;
-  final DateTime dtCreateAt;
-  final bool active;
+  final String? idUser;
+  final String? name;
+  final String? email;
+  final String? password;
+  final String? cellPhone;
+  final DateTime? dtCreateAt;
+  final bool? active;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         idUser: json["id_user"] == null ? null : json["id_user"],
@@ -42,10 +42,10 @@ class UserModel {
         "password": password == null ? null : password,
         "cell_phone": cellPhone == null ? null : cellPhone,
         "dt_create_at":
-            dtCreateAt == null ? null : dtCreateAt.toIso8601String(),
+            dtCreateAt == null ? null : dtCreateAt!.toIso8601String(),
         "active": active == null ? null : active,
       };
-  static List<UserModel> fromJsonList(List list) {
+  static List<UserModel>? fromJsonList(List? list) {
     if (list == null) return null;
     return list.map((item) => UserModel.fromJson(item)).toList();
   }
